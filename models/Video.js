@@ -14,13 +14,15 @@ const VideoSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    channelImage: {
+      type: String,
+    },
     imgUrl: {
       type: String,
       required: true,
     },
     videoUrl: {
       type: String,
-      required: true,
     },
     views: {
       type: Number,
@@ -29,6 +31,7 @@ const VideoSchema = new mongoose.Schema(
     tags: {
       type: [String],
       default: [],
+      trim: true,
     },
     likes: {
       type: [String],
