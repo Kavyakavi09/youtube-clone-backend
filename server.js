@@ -36,7 +36,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-let port = process.env.PORT || 8800;
+let port = process.env.PORT || 4006;
 
 app.listen(port, async () => {
   console.log(`The App is running on the port ${port}`);
