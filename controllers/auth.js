@@ -31,7 +31,7 @@ export const signin = async (req, res, next) => {
     res
       .cookie('access_token', token, { httpOnly: true })
       .status(200)
-      .json({ others: others, token: token });
+      .json({ token: token }, others);
   } catch (err) {
     next(err);
   }
@@ -45,7 +45,7 @@ export const googleAuth = async (req, res, next) => {
       res
         .cookie('access_token', token, { httpOnly: true })
         .status(200)
-        .json({ user: user._doc, token: token });
+        .json({ token: token }, user._doc);
     } else {
       const newUser = new User({
         ...req.body,
@@ -56,7 +56,7 @@ export const googleAuth = async (req, res, next) => {
       res
         .cookie('access_token', token, { httpOnly: true })
         .status(200)
-        .json({ user: savedUser._doc, token: token });
+        .json({ token: token }, savedUser._doc);
     }
   } catch (err) {
     next(err);
