@@ -11,12 +11,13 @@ import cookieParser from 'cookie-parser';
 // web server
 const app = express();
 
-app.use(cors());
+app.use('*', cors());
 
 // dotenv environment setup
 dotenv.config();
 
 // middlewares
+// app.set('trust proxy', 1);
 app.use(cookieParser());
 app.use(express.json());
 app.use('/api/auth', authRoutes);
