@@ -17,7 +17,7 @@ app.use('*', cors());
 dotenv.config();
 
 // middlewares
-// app.set('trust proxy', 1);
+app.set('trust proxy', 1);
 app.use(cookieParser());
 app.use(express.json());
 app.use('/api/auth', authRoutes);
