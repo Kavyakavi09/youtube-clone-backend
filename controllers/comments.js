@@ -9,6 +9,7 @@ export const addComment = async (req, res, next) => {
     res.status(200).send(savedComment);
   } catch (err) {
     next(err);
+    console.log(err)
   }
 };
 
