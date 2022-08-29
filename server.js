@@ -11,7 +11,12 @@ import cookieParser from 'cookie-parser';
 // web server
 const app = express();
 
-app.use('*', cors());
+const corsOptions = {
+  origin: 'https://kavyatube.netlify.app/',
+  credentials: true,
+  optionSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 
 // dotenv environment setup
 dotenv.config();
